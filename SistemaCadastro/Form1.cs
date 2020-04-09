@@ -15,11 +15,12 @@ namespace SistemaCadastro
     {
         struct tdado
         {
-            //?
+            public string nome, cpf;
+            //public int idade;
         };
         int qtd = 0;
+        Queue<tdado> fila = new Queue<tdado>();
         
-      
         public Form1()
         {
             InitializeComponent();
@@ -37,13 +38,21 @@ namespace SistemaCadastro
 
         void mostrar()
         {
-            
-
+            txtFila.Clear();
+            foreach(tdado x in fila)
+                txtFila.AppendText(x.nome + "-" + x.cpf + "\r\n");        
         }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            
+            tdado x;
+            x.nome = txtNome.Text;
+            x.cpf = txtCPF.Text;
+            fila.Enqueue(x);
+            mostrar();
+            // limpando os campos
+            txtNome.Clear();
+            txtCPF.Clear();
+            txtNome.Focus();
         }
         void salvar()
         {
@@ -91,17 +100,39 @@ namespace SistemaCadastro
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            int i = 1;
+            foreach (tdado x in fila)
+            {
+                if(x.cpf.Equals(txtBuscar.Text))
+                {
+                    // achou fala a posicao i
+                    //"x.nome esta na posicao i"
+                    break;
+                }
+                i++;
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            
+            tdado r;
+            if (fila.Count > 0)
+            {
+                r = fila.Dequeue();
+                MessageBox.Show("Removido:" + r.nome);
+                lblAtendimento.Text = "Proximo:\n" + r.nome;
+            }
+            mostrar();
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

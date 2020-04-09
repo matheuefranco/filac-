@@ -50,6 +50,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -202,6 +204,8 @@
             // 
             // tabCadastrar
             // 
+            this.tabCadastrar.Controls.Add(this.textBox1);
+            this.tabCadastrar.Controls.Add(this.label3);
             this.tabCadastrar.Controls.Add(this.btnConfirmar);
             this.tabCadastrar.Controls.Add(this.txtCPF);
             this.tabCadastrar.Controls.Add(this.label2);
@@ -218,7 +222,7 @@
             // btnConfirmar
             // 
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Location = new System.Drawing.Point(360, 155);
+            this.btnConfirmar.Location = new System.Drawing.Point(356, 188);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(228, 54);
             this.btnConfirmar.TabIndex = 6;
@@ -282,6 +286,23 @@
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(156, 131);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(740, 32);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 23);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Idade";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,6 +356,8 @@
         private System.Windows.Forms.TextBox txtFila;
         private System.Windows.Forms.Label lblAtendimento;
         private System.Windows.Forms.Button btnAtender;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
